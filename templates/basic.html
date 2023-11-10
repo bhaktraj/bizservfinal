@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>BizServ ConXultancy</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/logo.png' %}" rel="icon">
+  <link href="{% static 'assets/img/logo.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="/" class="logo d-flex align-items-center">
+        <img src="{% static 'assets/img/logo.png' %}" alt="">
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link " href="/">Home</a></li>
+          
+          <li><a class="nav-link scrollto" href="/OemAuthorization/">Oem Authorization</a></li>
+          
+          <li class="dropdown"><a href="/"><span>GeM Portal Services</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/GeMregistration/">GeM registration</a></li>
+              
+              <li><a href="/ProductUploading/">Product Uploading</a></li>
+              <li><a href="/BidParticipation/">Bid Participation</a></li>
+              
+              <li><a href="/VendorAssessments/">Vendor Assessments</a></li>
+              <li><a href="/TenderNotification/">Tender Notification</a></li>
+
+
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="/about/">About</a></li>
+
+        
+
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="getstarted scrollto" href="" data-bs-toggle="modal" data-bs-target="#modalContactForm">Register</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+{% block body %} {% endblock %}
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="contact">
+
+    <div class="container" data-aos="fade-up">
+
+      <header class="section-header">
+        <h2>Contact</h2>
+        
+      </header>
+
+      <div class="row gy-4">
+
+        <div class="col-lg-6">
+
+          <div class="row gy-4">
+            <div class="col-md-6">
+              <div class="info-box">
+                <i class="bi bi-geo-alt"></i>
+                <h3>Address</h3>
+                <p></p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="info-box">
+                <i class="bi bi-telephone"></i>
+                <h3>Call Us</h3>
+                <p>+917042678399<br>+917042678399</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="info-box">
+                <i class="bi bi-envelope"></i>
+                <h3>Email Us</h3>
+                <p></p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="info-box">
+                <i class="bi bi-clock"></i>
+                <h3>Open Hours</h3>
+                <p>Monday - Friday<br>9:00AM - 05:00PM</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-lg-6">
+          <form method="post" action="{% url 'adddetails' %}" enctype="multipart/form-data"> 
+            {% csrf_token %}
+            <div class="row gy-4">
+
+              <div class="col-md-12">
+                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+              </div>
+
+              <div class="col-md-12 ">
+                <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+              </div>
+              <div class="col-md-12">
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone No." pattern="[0-9]{10}" required>
+              </div>
+
+              <div class="col-md-12">
+                <select class="form-control" name="Services" id="" placeholder="select Service">
+                    <option value="GeM Registration">GeM Registration</option>
+                    <option value="bid Particapation">bid Particapation</option>
+                    <option value="Product Uploading">Product Uploading</option>
+                    <option value="Vendor Assessments">Vendor Assessments</option>
+                    <option value="Tender Notification">Tender Notification</option>
+                  </select>
+              </div>
+
+             
+
+              <div class="row mb-3 mt-4">
+                
+                <div class="col-sm-10">
+                  <button type="submit" class="btn btn-primary">Submit Form</button>
+                </div>
+              </div>
+            </div>
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section><!-- End Contact Section -->
+
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<footer id="footer" class="footer">
+
+  <div class="footer-top">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-info">
+          <a href="/" class="logo d-flex align-items-center">
+            <img src="{% static 'assets/img/logo.png' %}" alt="">
+          </a>
+          <p>We are gem consultants, we provide registration services and as well as complete training for the gem portal. Our experts provide gem training for buyers and sellers. As we provide live and virtual gem portal training for buyers and sellers. For more information please contact our team they will guide you with all the details.</p>
+          
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="/">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="/about/">About us</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#contact">Contact us</a></li>
+
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="/BidParticipation/">Bid Particapation</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="/GeMregistration/">GeMregistration</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="/GeMtrainingCourse/">GeMtrainingCourse</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="/ProductUploading/">Product Uploading</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="/TenderNotification/">Tender Notification</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>
+            A108 Adam Street <br>
+            New York, NY 535022<br>
+            United States <br><br>
+            <strong>Phone:</strong> +1 5589 55488 55<br>
+            <strong>Email:</strong> info@example.com<br>
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    
+    
+  </div>
+</footer><!-- End Footer -->
+
+<a href="https://wa.me/917042678399" class="back-to-top1 d-flex align-items-center justify-content-center">
+  <img src="https://img.icons8.com/color/40/000000/whatsapp--v1.png"/>
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- Pop up windows-->
+  <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog popform"   role="document" >
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div><h4 class="modal-title font-weight-bold text-center"  >Best Gem service in Delhi ends here </h4>
+      <p class="text-center">
+        Get response within 24 hours</p></div>
+      <div class="modal-body ">
+        <form method="post" action="{% url 'adddetails' %}" enctype="multipart/form-data"> 
+          {% csrf_token %}
+        <div class="md-form mb-1">
+          
+          <input type="text" id="form34" class="form-control validate" placeholder="Enter your name">
+          
+        </div>
+
+        <div class="md-form mb-1">
+
+          <input type="email" id="form29" class="form-control validate" placeholder="Enter your email">
+          
+        </div>
+
+        <div class="md-form mb-1">
+          
+          <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" id="form30" class="form-control validate" placeholder="Enter your phone">
+          
+        </div>
+        <div class="col-md-12">
+          <select class="form-control" name="Services" id="" placeholder="select Service">
+              <option value="GeM Registration">GeM Registration</option>
+              <option value="bid Particapation">bid Particapation</option>
+              <option value="Product Uploading">Product Uploading</option>
+              <option value="Vendor Assessments">Vendor Assessments</option>
+              <option value="Tender Notification">Tender Notification</option>
+            </select>
+        </div>
+
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center homebutton">
+        <button class="btn btn-unique hh"  type="submit">Send <i class="fas fa-paper-plane-o ml-1"></i></button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!--/pop up windows-->
+
+<!-- Vendor JS Files -->
+<script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+<script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+<script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+<script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+<script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+<!-- Template Main JS File -->
+<script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
